@@ -11,7 +11,7 @@ export default function Home() {
         </p>
           <Input placeholder={"Hi"}/>
           <Button variant={"elevated"} >hello</Button>
-          <Progress value={25}/>
+          <Progress value={56}/>
           <Textarea/>
       </div>
   )
