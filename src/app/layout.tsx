@@ -3,8 +3,8 @@ import { DM_Sans } from 'next/font/google';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'HopShop',
-  description: 'Welcome to the HopShop',
+  title: 'Hop’n’Shop',
+  description: 'Welcome to the Hop’n’Shop',
 };
 const dmSans = DM_Sans({
   subsets: ['latin'],
