@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 interface SubcategoryMenuProps {
-  category: any;
+  category: Category;
   isOpen: boolean;
   position: { top: number; left: number };
 }
