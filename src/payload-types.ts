@@ -13,6 +13,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    categories: Category;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -25,6 +26,7 @@ export interface Config {
     collection: 'users';
   };
 }
+
 export interface UserAuthOperations {
   forgotPassword: {
     email: string;
@@ -43,10 +45,7 @@ export interface UserAuthOperations {
     password: string;
   };
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users".
- */
+
 export interface User {
   id: string;
   updatedAt: string;
@@ -60,10 +59,7 @@ export interface User {
   lockUntil?: string | null;
   password?: string | null;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "media".
- */
+
 export interface Media {
   id: string;
   alt: string;
@@ -79,10 +75,18 @@ export interface Media {
   focalX?: number | null;
   focalY?: number | null;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-preferences".
- */
+
+export interface Category {
+  id: string;
+  name: string;
+  slug: string;
+  color?: string | null;
+  parent?: string | Category | null;
+  subcategories?: string[] | Category[];
+  updatedAt: string;
+  createdAt: string;
+}
+
 export interface PayloadPreference {
   id: string;
   user: {
@@ -102,10 +106,7 @@ export interface PayloadPreference {
   updatedAt: string;
   createdAt: string;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-migrations".
- */
+
 export interface PayloadMigration {
   id: string;
   name?: string | null;
@@ -113,14 +114,10 @@ export interface PayloadMigration {
   updatedAt: string;
   createdAt: string;
 }
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "auth".
- */
+
 export interface Auth {
   [k: string]: unknown;
 }
-
 
 declare module 'payload' {
   export interface GeneratedTypes extends Config {}
