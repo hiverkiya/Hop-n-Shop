@@ -2,7 +2,7 @@ import { Category } from '@/payload-types.ts';
 import { CategoryDropdown } from '@/app/(app)/(home)/searchFilters/CategoryDropdown.tsx';
 
 interface Props {
-  payloadData: any;
+  payloadData: Category[];
 }
 export const Categories = ({ payloadData }: Props) => {
   return (

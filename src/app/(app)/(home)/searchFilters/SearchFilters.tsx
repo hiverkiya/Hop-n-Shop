@@ -2,7 +2,7 @@ import { Categories } from '@/app/(app)/(home)/searchFilters/Categories.tsx';
 import { SearchInput } from '@/app/(app)/(home)/searchFilters/SearchInput.tsx';
 
 interface Props {
-  payloadData: any;
+  payloadData: Category[];
 }
 export const SearchFilters = ({ payloadData }: Props) => {
   return (
