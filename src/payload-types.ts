@@ -76,13 +76,30 @@ export interface Media {
   focalY?: number | null;
 }
 
+// ----------------------------------------------------------------
+//  New interface to accurately represent the subcategories object.
+// ----------------------------------------------------------------
+export interface SubcategoriesPaginationResult {
+  docs: Category[];
+  totalDocs?: number | null;
+  limit?: number | null;
+  page?: number | null;
+  totalPages?: number | null;
+  nextPage?: number | null;
+  prevPage?: number | null;
+  hasNextPage?: boolean;
+  hasPrevPage?: boolean;
+}
+
 export interface Category {
   id: string;
   name: string;
   slug: string;
   color?: string | null;
   parent?: string | Category | null;
-  subcategories?: string[] | Category[];
+  // This line has been updated.
+  // The 'subcategories' field is now typed as the new interface.
+  subcategories?: SubcategoriesPaginationResult;
   updatedAt: string;
   createdAt: string;
 }

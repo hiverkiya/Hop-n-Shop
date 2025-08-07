@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
-import { NavbarSidebar } from '@/app/(app)/(home)/navbar-sidebar';
+import { NavbarSidebar } from '@/app/(app)/(home)/NavbarSidebar.tsx';
 import { useState } from 'react';
 import { MenuIcon } from 'lucide-react';
 const poppins = Poppins({
@@ -63,7 +63,7 @@ export const Navbar = () => {
           <span className={cn('text-5xl font-semibold', poppins.className)}>HopShop</span>
         </Link>
         <NavbarSidebar open={isSidebarOpen} onOpenChange={setIsSidebarOpen} items={navbarItems} />
-        <div className="items-center gap-4 hidden lg:flex">
+        <div className="items-center gap-4 hidden lg:flex ">
           {navbarItems.map((item) => (
             <NavbarItem key={item.href} href={item.href} isActive={pathname === item.href}>
               {item.children}

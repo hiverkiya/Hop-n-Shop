@@ -15,7 +15,7 @@ export const NavbarSidebar = ({ items, open, onOpenChange }: Props) => {
   return (
     <div>
       <Sheet open={open} onOpenChange={onOpenChange}>
-        <SheetContent side="left" className="p-0 transition-none">
+        <SheetContent side="left" className="p-0 bg-white transition-none">
           <SheetHeader className="p-4 border-b">
             <SheetTitle>Menu</SheetTitle>
           </SheetHeader>
@@ -24,7 +24,7 @@ export const NavbarSidebar = ({ items, open, onOpenChange }: Props) => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium"
+                className="w-full  text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium"
                 onClick={() => onOpenChange(false)}
               >
                 {item.children}
