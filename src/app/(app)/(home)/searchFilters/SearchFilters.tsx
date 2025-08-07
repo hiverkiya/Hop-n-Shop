@@ -1,8 +1,9 @@
 import { Categories } from '@/app/(app)/(home)/searchFilters/Categories.tsx';
 import { SearchInput } from '@/app/(app)/(home)/searchFilters/SearchInput.tsx';
+import { CustomCategory } from '../types';
 
 interface Props {
-  payloadData: Category[];
+  payloadData: CustomCategory[];
 }
 export const SearchFilters = ({ payloadData }: Props) => {
   return (

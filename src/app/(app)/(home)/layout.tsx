@@ -1,9 +1,9 @@
 import configPromise from '@payload-config';
-import { getPayload } from 'payload';
 import { Navbar } from '@/app/(app)/(home)/Navbar.tsx';
 import { SearchFilters } from '@/app/(app)/(home)/searchFilters/SearchFilters.tsx';
 import WebsiteFooter from '@/app/(app)/(home)/Footer.tsx';
 import { Category } from '@/payload-types.ts';
+import { getPayload } from 'payload';
 
 interface Props {
   children: React.ReactNode;
@@ -20,8 +20,9 @@ const Layout = async ({ children }: Props) => {
     where: {
       parent: { exists: false },
     },
+    sort: 'name',
   });
-  const formattedData = payloadData.docs.map((doc) => ({
+  const formattedData: Category[] = payloadData.docs.map((doc) => ({
     ...doc,
     subcategories: (doc.subcategories?.docs ?? []).map((doc: Category) => ({
       //Depth 1 gives the doc as Category
