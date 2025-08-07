@@ -24,8 +24,7 @@ export const CategoryDropdown = ({ category, isActive, isNavigationHovered }: Pr
     setIsOpen(false);
   };
   const dropdownPosition = getDropdownPosition();
-  // @ts-ignore
-  // @ts-ignore
+
   return (
     <div
       className="relative"
